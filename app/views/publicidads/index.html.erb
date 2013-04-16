@@ -1,0 +1,29 @@
+<h1>Lista de publicidades</h1>
+
+<center><table class="table table-border">
+  <tr>
+    <th>Imagen</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+
+
+
+<% @publicidads.each do |publicidad| %>
+  <tr>
+    <td class="img"><%= image_tag publicidad.image_url(:thumb).to_s %></td>
+    <td><%= link_to edit_publicidad_path(publicidad),class: 'btn-mini btn-inverse btn' do%>
+      <i class="icon-edit"></i> Editar
+      <% end %>
+    <%= link_to publicidad, confirm: 'Esta seguro de Eliminar este Termino?', disable_with: 'Borrando...',  method: :delete,class: 'btn-mini btn-warning btn' do %>
+    <i class="icon-trash"></i>Borrar
+    <% end %>
+  </tr>
+<% end %>
+</table></center>
+
+
+

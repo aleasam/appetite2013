@@ -1,0 +1,37 @@
+<h1>Lista de restaurantes</h1>
+
+<center><table class="table table-border">
+  <tr>
+    <th>Nombre</th>
+    <th>Imagen</th>
+    <th>Nombre representante</th>
+    <th>Tel representante</th>
+    <th>Celular</th>
+    <th>Correo</th>
+   
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @restaurantes.each do |restaurante| %>
+  <tr>
+    <td><%= restaurante.nombre %></td>
+    <td class="img"><%= image_tag restaurante.image_url(:thumb).to_s %></td>
+    <td><%= restaurante.nombre_representante %></td>
+    <td><%= restaurante.tel_representante %></td>
+    <td><%= restaurante.celular %></td>
+    <td><%= restaurante.correo %></td>
+    <td><%= link_to edit_restaurante_path(restaurante),class: 'btn-mini btn-inverse btn' do%>
+      <i class="icon-edit"></i> Editar
+      <% end %>
+    <%= link_to restaurante, confirm: 'Esta seguro de Eliminar este Termino?', disable_with: 'Borrando...',  method: :delete,class: 'btn-mini btn-warning btn' do %>
+    <i class="icon-trash"></i>Borrar
+    <% end %>
+  </tr>
+<% end %>
+</table></center>
+
+
+
+

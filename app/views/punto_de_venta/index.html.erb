@@ -1,0 +1,36 @@
+<h1>Listing punto_de_venta</h1>
+
+<center><table class="table table-border">
+  <tr>
+    <th>Id restaurante</th>
+    <th>Telefono</th>
+    <th>Direccion</th>
+    <th>Latitud</th>
+    <th>Longitud</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @punto_de_venta.each do |punto_de_ventum| %>
+  <tr>
+    <td><%= punto_de_ventum.id_restaurante %></td>
+    <td><%= punto_de_ventum.telefono %></td>
+    <td><%= punto_de_ventum.direccion %></td>
+    <td><%= punto_de_ventum.latitud %></td>
+    <td><%= punto_de_ventum.longitud %></td>
+    <td><%= link_to edit_punto_de_ventum_path(punto_de_ventum),class: 'btn-mini btn-inverse btn' do%>
+      <i class="icon-edit"></i> Editar
+      <% end %>
+    <%= link_to punto_de_ventum, confirm: 'Esta seguro de Eliminar este Termino?', disable_with: 'Borrando...',  method: :delete,class: 'btn-mini btn-warning btn' do %>
+    <i class="icon-trash"></i>Borrar
+    <% end %>
+    <td><%= link_to 'Edit', edit_punto_de_ventum_path(punto_de_ventum) %></td>
+    <td><%= link_to 'Destroy', punto_de_ventum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table></center>
+
+<br />
+
+<%= link_to 'New Punto de ventum', new_punto_de_ventum_path %>

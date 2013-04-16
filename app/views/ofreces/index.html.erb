@@ -1,0 +1,25 @@
+<h1>Listing ofreces</h1>
+
+<table>
+  <tr>
+    <th>Id restaurante</th>
+    <th>Id producto</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ofreces.each do |ofrece| %>
+  <tr>
+    <td><%= ofrece.id_restaurante %></td>
+    <td><%= ofrece.id_producto %></td>
+    <td><%= link_to 'Show', ofrece %></td>
+    <td><%= link_to 'Edit', edit_ofrece_path(ofrece) %></td>
+    <td><%= link_to 'Destroy', ofrece, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ofrece', new_ofrece_path %>

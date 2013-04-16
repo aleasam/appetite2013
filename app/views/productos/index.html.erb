@@ -1,0 +1,32 @@
+<h1>Lista de productos</h1>
+
+<center><table class="table table-border">
+  <tr>
+    <th>Nombre</th>
+    <th>Precio</th>
+    <th>Imagen</th>
+    <th>categoria</th>
+    <th>restaurante</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @productos.each do |producto| %>
+  <tr>
+    <td><%= producto.nombre %></td>
+    <td><%= producto.precio %></td>
+    <td class="img"><%= image_tag producto.image_url(:thumb).to_s %></td>
+    <td><%= producto.categorium.nombre %></td>
+    <td><%= producto.restaurante.nombre %></td>
+    <td><%= link_to edit_producto_path(producto),class: 'btn-mini btn-inverse btn' do%>
+      <i class="icon-edit"></i> Editar
+      <% end %>
+    <%= link_to producto, confirm: 'Esta seguro de Eliminar este Termino?', disable_with: 'Borrando...',  method: :delete,class: 'btn-mini btn-warning btn' do %>
+    <i class="icon-trash"></i>Borrar
+    <% end %>
+  </tr>
+<% end %>
+</table></center>
+
+

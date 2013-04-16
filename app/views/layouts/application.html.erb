@@ -10,7 +10,7 @@
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
       <nav class="navbar-inner">
         <div class="container">
           <%= render 'layouts/navigation' %>
@@ -26,10 +26,16 @@
               <%= yield %>
             </div>
           </div>
-          <footer>
-          </footer>
+          
         </div>
       </div> <!--! end of .container -->
     </div> <!--! end of #main -->
+    <strong><footer class="footer">
+            <div id='footer-wrapper'>
+              <b:section class='footer' id='footer'>
+                <%= render 'layouts/footer' %>
+              </b:section>
+            </div>
+          </footer></strong>
   </body>
 </html>

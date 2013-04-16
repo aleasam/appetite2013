@@ -1,0 +1,2 @@
+module PuntoDeVentaHelper
+end

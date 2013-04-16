@@ -1,0 +1,14 @@
+<%= simple_form_for(@ciudade) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nombre %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, "Crear Ciudad", :class => 'btn-primary' %>
+    
+      <%= link_to("cancelar", root_path, :data => { :confirm => "No se guardaran datos" }, :class => 'btn btn-inverse') %>
+    
+  </div>
+<% end %>

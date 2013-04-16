@@ -1,0 +1,29 @@
+<h1>Lista de comentarios</h1>
+
+<center><table class="table table-border">
+  <tr>
+    <th>Comentarios</th>
+    <th>Id producto</th>
+    <th>Id usuario</th>
+    <th>Fecha</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @comentarios.each do |comentario| %>
+  <tr>
+    <td><%= comentario.comentarios %></td>
+    <td><%= comentario.id_producto %></td>
+    <td><%= comentario.id_usuario %></td>
+    <td><%= comentario.fecha %></td>
+    <td><%= link_to edit_comentario_path(comentario),class: 'btn-mini btn-inverse btn' do%>
+      <i class="icon-edit"></i> Editar
+      <% end %>
+    <%= link_to comentario, confirm: 'Esta seguro de Eliminar este Termino?', disable_with: 'Borrando...',  method: :delete,class: 'btn-mini btn-warning btn' do %>
+    <i class="icon-trash"></i>Borrar
+    <% end %>
+  </tr>
+<% end %>
+</table></center>
+

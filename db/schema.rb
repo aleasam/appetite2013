@@ -11,7 +11,78 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130227194651) do
+ActiveRecord::Schema.define(:version => 20130322193254) do
+
+  create_table "categoria", :force => true do |t|
+    t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "ciudades", :force => true do |t|
+    t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comentarios", :force => true do |t|
+    t.string   "comentarios"
+    t.integer  "id_producto"
+    t.integer  "id_usuario"
+    t.date     "fecha"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "ofreces", :force => true do |t|
+    t.integer  "id_restaurante"
+    t.integer  "id_producto"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "productos", :force => true do |t|
+    t.string   "nombre"
+    t.string   "precio"
+    t.string   "imagen"
+    t.integer  "categoria_id"
+    t.integer  "restaurante_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "image"
+  end
+
+  create_table "publicidads", :force => true do |t|
+    t.string   "imagen"
+    t.integer  "id_punto_de_ventum"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image"
+  end
+
+  create_table "punto_de_venta", :force => true do |t|
+    t.integer  "id_restaurante"
+    t.string   "telefono"
+    t.string   "direccion"
+    t.float    "latitud"
+    t.float    "longitud"
+    t.integer  "id_ciudade"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "restaurantes", :force => true do |t|
+    t.string   "nombre"
+    t.string   "imagen"
+    t.string   "nombre_representante"
+    t.string   "tel_representante"
+    t.string   "celular"
+    t.string   "password"
+    t.string   "correo"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "image"
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -49,5 +120,16 @@ ActiveRecord::Schema.define(:version => 20130227194651) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "usuarios", :force => true do |t|
+    t.string   "nombre_completo"
+    t.string   "nombre_usuario"
+    t.string   "correo"
+    t.string   "password"
+    t.string   "twitter"
+    t.string   "ciudad"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
 end

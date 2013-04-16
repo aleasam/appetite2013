@@ -1,0 +1,14 @@
+ <%= simple_form_for(@publicidad) do |f| %>
+  <%= f.error_notification %> 
+  
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  <div class="actions">
+    <%= f.button :submit, "Crear Publicidad", :class => 'btn-primary' %>
+    
+      <%= link_to("cancelar", root_path, :data => { :confirm => "No se guardaran datos" }, :class => 'btn btn-inverse') %>
+    
+  </div>
+<% end %>
+

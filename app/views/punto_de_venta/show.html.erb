@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id restaurante:</b>
+  <%= @punto_de_ventum.id_restaurante %>
+</p>
+
+<p>
+  <b>Telefono:</b>
+  <%= @punto_de_ventum.telefono %>
+</p>
+
+<p>
+  <b>Direccion:</b>
+  <%= @punto_de_ventum.direccion %>
+</p>
+
+<p>
+  <b>Latitud:</b>
+  <%= @punto_de_ventum.latitud %>
+</p>
+
+<p>
+  <b>Longitud:</b>
+  <%= @punto_de_ventum.longitud %>
+</p>
+
+
+<%= link_to 'Edit', edit_punto_de_ventum_path(@punto_de_ventum) %> |
+<%= link_to 'Back', punto_de_venta_path %>

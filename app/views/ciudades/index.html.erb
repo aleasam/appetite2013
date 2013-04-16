@@ -1,0 +1,26 @@
+<h1>Listing ciudades</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ciudades.each do |ciudade| %>
+  <tr>
+    <td><%= ciudade.nombre %></td>
+    <td><%= link_to edit_ciudade_path(ciudade),class: 'btn-mini btn-inverse btn' do%>
+      <i class="icon-edit"></i> Editar
+      <% end %>
+    <%= link_to ciudade, confirm: 'Esta seguro de Eliminar este Termino?', disable_with: 'Borrando...',  method: :delete,class: 'btn-mini btn-warning btn' do %>
+    <i class="icon-trash"></i>Borrar
+    <% end %>
+    <td><%= link_to 'Edit', edit_ciudade_path(ciudade) %></td>
+    <td><%= link_to 'Destroy', ciudade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+
