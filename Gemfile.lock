@@ -203,7 +203,6 @@ DEPENDENCIES
   rspec-rails (>= 2.12.2)
   sass-rails (~> 3.2.3)
   simple_form (>= 2.0.4)
-  sqlite3
   therubyracer (>= 0.11.3)
   thin (>= 1.5.0)
   uglifier (>= 1.0.3)
